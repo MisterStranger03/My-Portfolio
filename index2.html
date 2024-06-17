@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raman - Developer Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            transition: background-color 0.3s, color 0.3s;
+            background-image: url(https://i.pinimg.com/originals/f3/f4/cc/f3f4ccdebad8a85ed48b1375587c0fd9.gif);
+            background-size: cover;
+            background-position: center;
+            background-color: white;
+            color: black;
+        }
+
+        .dark-mode {
+            background-color: black;
+            color: white;
+            background-image: url(https://www.icegif.com/wp-content/uploads/2023/05/icegif-8.gif);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+            padding: 0 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            transition: background-color 0.5s;
+        }
+
+        .dark-mode nav {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        nav .left {
+            font-size: 1.5rem;
+            white-space: nowrap;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            margin-left: auto;
+            padding-right: 10px;
+        }
+
+        nav ul li {
+            list-style: none;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: black;
+            transition: color 0.3s;
+        }
+
+        .dark-mode nav ul li a {
+            color: white;
+        }
+
+        nav ul li a:hover {
+            color: rgb(109, 109, 236);
+            font-size: 1.02rem;
+        }
+
+        .toggle-button {
+            margin-left: 10px;
+            padding: 10px;
+            background-color: black;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.2rem;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .dark-mode .toggle-button {
+            background-color: white;
+            color: black;
+        }
+
+        main hr {
+            border: 0;
+            background-color: rgb(200, 200, 255);
+            height: 1.2px;
+            margin: 40px 84px;
+        }
+
+        .dark-mode main hr {
+            background-color: white;
+        }
+
+        .left {
+            font-size: 1.5rem;
+        }
+
+        .firstsection {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin: 150px 0;
+        }
+
+        .firstsection>div {
+            width: 30%;
+            margin: 80px 0;
+        }
+
+        .leftsection {
+            font-size: 2.5rem;
+        }
+
+        .leftsection .buttons {
+            padding: 50px 0;
+        }
+
+        .leftsection .btn1,
+        .leftsection .btn2 {
+            padding: 12px;
+            background-color: white;
+            color: black;
+            border: 2px solid black;
+            border-radius: 6px;
+            font-size: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+        }
+
+        .dark-mode .leftsection .btn1,
+        .dark-mode .leftsection .btn2 {
+            background-color: black;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .rightsection img {
+            width: 80%;
+        }
+
+        .purple {
+            color: rgb(138, 13, 201);
+        }
+
+        .text-gray {
+            color: darkgray;
+        }
+
+        .dark-mode .text-gray {
+            color: lightgray;
+        }
+
+        #element {
+            color: rgb(126, 17, 227);
+        }
+
+        .secondsection {
+            max-width: 80vw;
+            margin: auto;
+            height: 80vh;
+        }
+
+        .secondsection h1 {
+            font-size: 1.9rem;
+        }
+
+        .secondsection .box {
+            background: rgb(200, 200, 255);
+            width: 78vw;
+            height: 2px;
+            margin: 56px 0;
+            display: flex;
+        }
+
+        .dark-mode .secondsection .box {
+            background: white;
+        }
+
+        .secondsection .vertical {
+            height: 93px;
+            width: 1px;
+            background-color: rgb(210, 206, 206);
+            margin: 0 6vw;
+        }
+
+        .dark-mode .secondsection .vertical {
+            background-color: white;
+        }
+
+        .image-top {
+            width: 23px;
+            position: relative;
+            top: -32px;
+            left: -9px;
+        }
+
+        .vertical-text {
+            position: relative;
+            top: 75px;
+            width: 150px;
+            font-size: 14px;
+            color: aliceblue;
+        }
+
+        .vertical-desc {
+            position: relative;
+            top: 86px;
+            color: darkgray;
+            width: 150px;
+            font-size: 9px;
+        }
+
+        .dark-mode .vertical-desc {
+            color: lightgray;
+        }
+
+        footer {
+            background-color: rgb(200, 200, 255);
+            transition: background-color 0.3s;
+        }
+
+        .dark-mode footer {
+            background-color: black;
+        }
+
+        .footer {
+            display: flex;
+            padding: 23px 122px;
+            justify-content: space-evenly;
+        }
+
+        .footer ul {
+            list-style: none;
+        }
+
+        .footer>div {
+            width: 223px;
+        }
+
+        footer .footer-rights {
+            text-align: center;
+            color: rgb(8, 0, 0);
+            padding: 12px 0;
+        }
+
+        .dark-mode footer .footer-rights {
+            color: lightgray;
+        }
+
+        @media screen and (max-width: 1400px) {
+            .box {
+                flex-direction: column;
+            }
+
+            .secondsection .vertical {
+                height: unset;
+            }
+
+            .vertical-text,
+            .vertical-desc {
+                left: 45px;
+            }
+
+            .secondsection .box {
+                width: 50vw;
+            }
+
+            nav {
+                flex-direction: column;
+            }
+
+            .firstsection {
+                flex-direction: column-reverse;
+            }
+
+            .leftsection {
+                width: 100% !important;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .secondsection {
+                height: 141vh;
+            }
+
+            .rightsection {
+                width: 721px !important;
+                display: flex;
+                justify-content: center;
+            }
+
+            .rightsection img {
+                width: 45vw;
+                margin-bottom: 73px;
+            }
+
+            .image-top {
+                top: 133px;
+            }
+
+            .secondsection {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            body {
+                min-height: fit-content;
+            }
+        }
+
+        /* Enhanced Contact Form Styles */
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 600px;
+            text-align: center;
+            margin: 50px auto;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            transition: background 0.3s, border-color 0.3s;
+        }
+
+        .dark-mode .container {
+            background: rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .container h1 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .dark-mode .container h1 {
+            color: white;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: black;
+            transition: color 0.3s;
+        }
+
+        .dark-mode .form-group label {
+            color: white;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            outline: none;
+            transition: border-color 0.3s, background 0.3s, color 0.3s;
+            background: rgba(255, 255, 255, 0.7);
+        }
+
+        .dark-mode .form-group input,
+        .dark-mode .form-group textarea {
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: #007bff;
+        }
+
+        .dark-mode .form-group input:focus,
+        .dark-mode .form-group textarea:focus {
+            border-color: #ff0000;
+        }
+
+        button[type="submit"] {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+        }
+
+        .dark-mode button[type="submit"] {
+            background-color: #ff0000;
+        }
+
+        .dark-mode button[type="submit"]:hover {
+            background-color: #cc0000;
+            transform: scale(1.1);
+        }
+
+        /* Creepy Hover Effects for Dark Mode */
+        .dark-mode .form-group input:hover,
+        .dark-mode .form-group textarea:hover {
+            background: rgba(50, 50, 50, 0.7);
+        }
+
+        .dark-mode button[type="submit"]:hover {
+            background-color: #ff1a1a;
+        }
+
+        /* Cheerful Hover Effects for Light Mode */
+        .form-group input:hover,
+        .form-group textarea:hover {
+            background: rgba(230, 230, 255, 0.9);
+        }
+
+        button[type="submit"]:hover {
+            background-color: #0066cc;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="left">Raman's Portfolio</div>
+            <ul>
+                <li><a href="/">Home </a></li>
+                <li><a href="/">About </a></li>
+                <li><a href="/">Services </a></li>
+                <li><a href="/">Projects </a></li>
+                <li><a href="#contact">Contact Me </a></li>
+            </ul>
+            <button class="toggle-button" onclick="toggleMode()">🌙</button>
+        </nav>
+    </header>
+    <main>
+        <section class="firstsection">
+            <div class="leftsection">
+                <div> Hi, My name is <span class="purple">Raman</span></div>
+                <div>And I am a passionate</div>
+                <span id="element"></span>
+                <div class="buttons">
+                    <button class="btn1">Download CV</button>
+                    <button class="btn2">Contact Me</button>
+                </div>
+            </div>
+            <div class="rightsection">
+                <img src="1.jpg" alt="" class="src">
+            </div>
+        </section>
+        <hr>
+        <section class="secondsection">
+            <span class="text-gray"> What I have done so far</span>
+            <h1>Work Experience</h1>
+            <div class="box">
+                <div class="vertical">
+                    <img src="dev.jpg" alt="" class="image-top">
+                    <div class="vertical-text">
+                        HTML Developer (2010-2012)
+                    </div>
+                    <div class="vertical-desc">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod cumque voluptas quas saepe autem
+                        illum id culpa, quasi facere. Eos odit at optio.
+                    </div>
+                </div>
+                <div class="vertical">
+                    <img src="dev.jpg" alt="" class="image-top">
+                    <div class="vertical-text">
+                        Node.Js Developer (2012-2014)
+                    </div>
+                    <div class="vertical-desc">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod cumque voluptas quas saepe autem
+                        illum id culpa, quasi facere. Eos odit at optio.
+                    </div>
+                </div>
+                <div class="vertical">
+                    <img src="dev.jpg" alt="" class="image-top">
+                    <div class="vertical-text">
+                        React Developer (2014-2016)
+                    </div>
+                    <div class="vertical-desc">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod cumque voluptas quas saepe autem
+                        illum id culpa, quasi facere. Eos odit at optio.
+                    </div>
+                </div>
+                <div class="vertical">
+                    <img src="dev.jpg" alt="" class="image-top">
+                    <div class="vertical-text">
+                        Front-End Developer (2016-2018)
+                    </div>
+                    <div class="vertical-desc">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod cumque voluptas quas saepe autem
+                        illum id culpa, quasi facere. Eos odit at optio.
+                    </div>
+                </div>
+                <div class="vertical">
+                    <img src="dev.jpg" alt="" class="image-top">
+                    <div class="vertical-text">
+                        Full Stack Developer (2018-2020)
+                    </div>
+                    <div class="vertical-desc">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod cumque voluptas quas saepe autem
+                        illum id culpa, quasi facere. Eos odit at optio.
+                    </div>
+                </div>
+                <div class="vertical">
+                    <img src="dev.jpg" alt="" class="image-top">
+                    <div class="vertical-text">
+                        Senior Developer (2020-present)
+                    </div>
+                    <div class="vertical-desc">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod cumque voluptas quas saepe autem
+                        illum id culpa, quasi facere. Eos odit at optio.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Enhanced Contact Form Section -->
+        <section id="contact" class="container">
+            <h1>Contact Me</h1>
+            <form action="submit_form.php" method="post">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <div class="footer">
+            <div class="footer-first">
+                <h3>Raman's Developer Portfolio</h3>
+            </div>
+            <div class="footer-second">
+                <ul>
+                    <li>Home</li>
+                    <li>About</li>
+                    <li>Services</li>
+                    <li>Contact</li>
+                </ul>
+            </div>
+            <div class="footer-third">
+                <ul>
+                    <li>Home</li>
+                    <li>About</li>
+                    <li>Services</li>
+                    <li>Contact</li>
+                </ul>
+            </div>
+            <div class="footer-fourth">
+                <ul>
+                    <li>Home</li>
+                    <li>About</li>
+                    <li>Services</li>
+                    <li>Contact</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-rights">
+            Copyright &#169; ramanportfolio.com | All rights reserved
+        </div>
+    </footer>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script>
+        var typed = new Typed('#element', {
+            strings: ['Web Developer', 'Full Stack Developer', 'Web Designer', 'Competitive Programmer'],
+            typeSpeed: 40,
+        });
+
+        function toggleMode() {
+            document.body.classList.toggle('dark-mode');
+            const toggleButton = document.querySelector('.toggle-button');
+            if (document.body.classList.contains('dark-mode')) {
+                toggleButton.textContent = '☀️';
+            } else {
+                toggleButton.textContent = '🌙';
+            }
+        }
+    </script>
+</body>
+
+</html>
